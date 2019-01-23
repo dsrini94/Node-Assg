@@ -1,0 +1,11 @@
+.container {
+  height:101.8vh;
+  background-color: #c94c4c;
+}
+
+.header {
+  color:#fff;
+  letter-spacing: 8px;
+  padding:20px;
+  margin-left: 250px;
+}

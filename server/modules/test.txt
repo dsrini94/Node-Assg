@@ -1,0 +1,1 @@
+File is read from the server and it is sent to the client

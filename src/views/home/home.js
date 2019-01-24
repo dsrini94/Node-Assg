@@ -15,26 +15,26 @@ export default class Home extends Component {
 
   constructor(props){
     super(props);
-    this.state = { activeItem: 'Task 1', taskComponent:<Task1 /> }
+    this.state = { activeItem: 'Read a file from the server', taskComponent:<Task1 /> }
 
     this.handleItemClick = this.handleItemClick.bind(this);
   }
 
   handleItemClick(e, { name }) {
-    if(name == 'Task 1')
+    if(name == 'Read a file from the server')
     {
       var temp = ( <Task1 /> )
       this.setState({ activeItem: name, taskComponent:temp })
     }
-    else if (name == 'Task 2') {
+    else if (name == 'Multiply Two Numbers') {
       var temp = ( <Task2 /> )
       this.setState({ activeItem: name, taskComponent:temp })
     }
-    else if (name == 'Task 3') {
+    else if (name == 'Upload a file to the server') {
       var temp = ( <Task3 /> )
       this.setState({ activeItem: name, taskComponent:temp })
     }
-    else if (name == 'Task 4') {
+    else if (name == 'First Non Repeating character of the string') {
       var temp = ( <Task4 /> )
       this.setState({ activeItem: name, taskComponent:temp })
     }
@@ -54,10 +54,10 @@ export default class Home extends Component {
           <Grid.Row>
             <Grid.Column width={4}>
               <Menu fluid vertical tabular style={{height:'100vh'}}>
-                  <Menu.Item name='Task 1' active={activeItem === 'Task 1'} onClick={this.handleItemClick} />
-                  <Menu.Item name='Task 2' active={activeItem === 'Task 2'} onClick={this.handleItemClick} />
-                  <Menu.Item name='Task 3' active={activeItem === 'Task 3'} onClick={this.handleItemClick} />
-                  <Menu.Item name='Task 4' active={activeItem === 'Task 4'} onClick={this.handleItemClick} />
+                  <Menu.Item name='Read a file from the server' active={activeItem === 'Read a file from the server'} onClick={this.handleItemClick} />
+                  <Menu.Item name='Multiply Two Numbers' active={activeItem === 'Multiply Two Numbers'} onClick={this.handleItemClick} />
+                  <Menu.Item name='Upload a file to the server' active={activeItem === 'Upload a file to the server'} onClick={this.handleItemClick} />
+                  <Menu.Item name='First Non Repeating character of the string' active={activeItem === 'First Non Repeating character of the string'} onClick={this.handleItemClick} />
                   <Menu.Item name='Web Crawler' active={activeItem === 'Web Crawler'} onClick={this.handleItemClick} />
                 </Menu>
             </Grid.Column>

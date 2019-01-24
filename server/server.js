@@ -1,18 +1,17 @@
 const express = require('express'),
       app = express();
 
-const readFile = require('./routes/readFile.js'),
-      product = require('./routes/product.js'),
-      writeFile = require('./routes/writeFile.js'),
-      charFinder = require('./routes/char-finder.js'),
-      scrapper = require('./routes/scrapper.js'),
-      saveFile = require('./routes/saveFile.js');
+const readFile = require('./routes/readFile.route.js'),
+      product = require('./routes/getProduct.route.js'),
+      charFinder = require('./routes/nonRepeatingCharFinder.route.js'),
+      scrapper = require('./routes/scrapper.route.js'),
+      saveFile = require('./routes/saveFile.route.js');
 
 app.use(express.static('./../build'));
 
 app.use('/',(req,res,next)=>{
   next();
-},readFile, product, writeFile, charFinder, scrapper, saveFile)
+},readFile, product, charFinder, scrapper, saveFile)
 
 app.listen(3001,()=>{
   console.log('server is listening to port 3001')

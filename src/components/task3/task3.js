@@ -29,7 +29,10 @@ export default class Task2 extends Component {
         req.attach('photo', file);
       });
       req.then(res => {
+        if(res.status === 200)
           alert(JSON.stringify(res.text));
+        else
+          alert('Something wrong with the server');
       });
   }
 

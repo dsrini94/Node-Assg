@@ -30,7 +30,10 @@ export default class Task2 extends Component {
     .get('/pdt')
     .query({a:this.state.operand1,b:this.state.operand2})
     .then(res => {
-      this.setState({value:res.text});
+      if(res.status === 200)
+        this.setState({value:res.text});
+      else
+        this.setState({text:'Something wrong with the server'})
     });
   }
 

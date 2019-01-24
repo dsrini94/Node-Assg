@@ -24,7 +24,10 @@ export default class Task2 extends Component {
       .post('/char')
       .query({text:this.state.text})
       .then(res => {
+        if(res.status === 200)
           this.setState({result:res.text});
+        else
+          this.setState({result:'Something wrong with the server'});
       });
   }
 

@@ -17,7 +17,10 @@ export default class Task1 extends Component {
     request
     .get('/readFile')
     .then(res => {
-      this.setState({text:res.text});
+      if(res.status === 200)
+        this.setState({text:res.text});
+      else
+        this.setState({text:'Something wrong with the server'})
     });
   }
 
